@@ -1,0 +1,61 @@
+	<html>
+	<head>
+	<title>Test</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+</head>
+<body onload="main()">
+	<div id="map" style="width: 600px; height: 400px"></div>
+
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+	<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+
+	<button onclick="ogo()">Track location</button>
+	<edit></edit>
+
+	
+	<script>
+	function main()
+	{
+
+		map = L.map('map');
+
+		function updateLocation(){
+			if (navigator.geolocation){
+
+	   		 navigator.geolocation.getCurrentPosition(function(position){
+	   		 		console.log(JSON.stringify(position.coords));
+	   		 		var pos = [position.coords.latitude, position.coords.longitude];
+	   		 		map.setView(pos, 13);
+	   		 		L.marker(pos).addTo(map);
+	   		 });
+		    }
+		}
+
+		var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
+		var ws = new Socket("ws://localhost:8080/1", "ws_reciever");	
+		
+        ws.onmessage = function(evt) { console.log("Received: " + evt.data); };
+
+		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			id: 'examples.map-i86knfo3'
+		}).addTo(map);
+
+		if (navigator.geolocation){
+			window.setInterval(updateLocation, 3000);
+		}
+	}
+
+
+	
+	</script>
+</body>
+</html>
