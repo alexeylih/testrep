@@ -24,37 +24,37 @@ end
 
 EventMachine.run do
 
-	def redis
-		$redis ||= EM::Hiredis.connect
-	end
+	# def redis
+	# 	$redis ||= EM::Hiredis.connect
+	# end
 
-	@connection_manager = ConnectionManager.new
+	# @connection_manager = ConnectionManager.new
 
-	EventMachine::WebSocket.run(:host => "0.0.0.0", :port => 8080) do |socket|
+	# EventMachine::WebSocket.run(:host => "0.0.0.0", :port => 8080) do |socket|
 
-    socket.onopen do |handshake|
+ #    socket.onopen do |handshake|
 	
-	  item_id = Router.dispatch(handshake.path)
+	#   item_id = Router.dispatch(handshake.path)
 
-	  if item_id 
-	  	@connection_handler = SubscriberHandler.new(item_id, socket)
-	  else
-	  	error = { error_code: 404 }
-	  	socket.send error.to_json
-	  	socket.close
-	  end
+	#   if item_id 
+	#   	@connection_handler = SubscriberHandler.new(item_id, socket)
+	#   else
+	#   	error = { error_code: 404 }
+	#   	socket.send error.to_json
+	#   	socket.close
+	#   end
 
-	end
+	# end
 
-    socket.onclose do
-     	@connection_handler.onclose
- 	end
+ #    socket.onclose do
+ #     	@connection_handler.onclose
+ # 	end
 
-    socket.onmessage do |msg|
-      	@connection_handler.onmessage(msg)
-    end
+ #    socket.onmessage do |msg|
+ #      	@connection_handler.onmessage(msg)
+ #    end
 
-  end
+ #  end
 
   AsyncRestServer.run!({:port => 3000}) 
 
