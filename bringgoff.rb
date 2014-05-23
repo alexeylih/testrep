@@ -56,7 +56,7 @@ EventMachine.run do
 
  #  end
 
-  AsyncRestServer.run!({:port => 3000}) 
+  AsyncRestServer.run!
 
 end
 

@@ -1,1 +1,1 @@
-web: bundle exec ruby bringgoff.rb
+web: bundle exec ruby bringgoff.rb -p $PORT
