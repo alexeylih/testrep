@@ -1,6 +1,5 @@
 require 'json'
 
-
 class Record
 
   include EventMachine::Deferrable
@@ -48,6 +47,15 @@ class Record
 	self
   end 
 
+  def delete_async
+  	redis.multi
+  	@@properties.each { |prop|
+  		redis.del("#{@@klass}:id:" + id.to_s + ":#{prop}")
+  	}
+  	
+  	redis.exec
+  end 
+
 end
 
 class Task < Record
@@ -64,7 +72,7 @@ class Task < Record
 	    	redis.multi
 		    	task.aset_description(description)
 		    	task.aset_destination_location(dest_location)
-		    	task.aset_current_location(dest_location) if curr_location
+		    	task.aset_current_location(curr_location) if curr_location
 	    	redis.exec.callback { |a|
 	    		task.succeed(task) 
 	    	}
@@ -74,7 +82,7 @@ class Task < Record
 	end   
 
 	def self.all
-		all_tasks = EMArray.new 
+		all_tasks = DeferrableResult.new 
 
 		redis.get("task:id").callback{ |last_index|
 
@@ -115,24 +123,18 @@ class Task < Record
     	self
 	end 
 
-	def delete_async(id) 
-		redis.multi
-			#todo
-    	redis.exec.callback {
-    		succeed(self)	
-    	}		
-    	self
-	end 
-
 	def self.exists?(id)
-		task = Task.new(id)
-
+		puts caller
+		found = DeferrableResult.new
 		# if mandatory destination_location filed exists, the whole object exists
-		redis.exists("task:id:#{id}:destination_location").callback{ |res|
-			task.succeed(!res.zero?)
+		redis.exists("task:id:#{id}:destination_location")
+		.callback{ |res|
+			found.result = !res.zero?
+			found.succeed(found)
 		}
+		.errback { |e| p e } 
 
-		task
+		found
 	end
 
 	def as_json(options={})
@@ -165,7 +167,7 @@ class Task < Record
 end
 
 #defferable wrapper for array  
-class EMArray 
+class DeferrableResult 
 
 	include EventMachine::Deferrable  
 	attr_accessor :result

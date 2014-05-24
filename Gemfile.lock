@@ -50,5 +50,6 @@ DEPENDENCIES
   async_sinatra
   em-hiredis
   em-websocket!
+  minitest
   sinatra
   thin

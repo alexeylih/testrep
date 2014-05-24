@@ -6,38 +6,26 @@ require 'json'
 require 'yaml'
 require 'sinatra/async'
 require 'thin'
+require 'restful'
 require 'lib/router'
 require 'lib/model'
-require 'lib/restfull'
-
-
-class ConnectionManager 
-
-	def initialize
-		@connections = Hash.new 
-	end 
-
-	def add_connection(task_id, connection)
-		@connections[task_id] = connection
-	end
-end 
+require 'lib/status_helper'
+require 'lib/connection_handlers'
 
 EventMachine.run do
 
+	p ENV
+
 	def redis
-		$redis ||= EM::Hiredis.connect('redis://redistogo:c5c119ec95f29c20886bcf5a7f7a6f2f@angelfish.redistogo.com:10023/')
+		$redis ||= EM::Hiredis.connect
 	end
 
-	@connection_manager = ConnectionManager.new
-
-	EventMachine::WebSocket.run(:host => "0.0.0.0", :port => 8080) do |socket|
+	EventMachine::WebSocket.run(host: "0.0.0.0", port: 8080) do |socket|
 
     socket.onopen do |handshake|
-	
 	  item_id = Router.dispatch(handshake.path)
-
 	  if item_id 
-	  	@connection_handler = SubscriberHandler.new(item_id, socket)
+	  	@connection_handler = handshake.headers['Sec-WebSocket-Protocol'] == "ws_reciever" ? SubscriberHandler.new(item_id, socket) : PublisherHandler.new(item_id, socket)
 	  else
 	  	error = { error_code: 404 }
 	  	socket.send error.to_json
@@ -56,8 +44,8 @@ EventMachine.run do
 
   end
 
-  AsyncRestServer.run!
+  EventMachine.error_handler { |err| puts err }
+
+  AsyncRestServer.run!({:port => 3000}) 
 
 end
-
-

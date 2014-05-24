@@ -2,7 +2,6 @@ class ConnectionHandler
 
 	def initialize(resource_id, socket)
 		@resource_id, @socket = resource_id, socket
-		
 	end
 
 	def onmessage(msg)
@@ -23,7 +22,14 @@ class PublisherHandler < ConnectionHandler
 	private 
 
 	def update_item(val)
-		redis.set resource, val
+		Task.exists?(@resource_id).callback { |res|
+			if res
+				task = Task.new(@resource_id)
+				task.aset_current_location { |desc|
+					@socket.send "updated"
+				}	
+			end
+		}
     end 
 	
 end 
@@ -32,7 +38,7 @@ class SubscriberHandler < ConnectionHandler
 
 	def initialize(resource_id, socket)
 		super(resource_id, socket)
-		EventMachine::PeriodicTimer.new(1, method(:send_update))
+		EventMachine::PeriodicTimer.new(resource_id, method(:send_update))
 	end
 
 	private
@@ -41,12 +47,11 @@ class SubscriberHandler < ConnectionHandler
 		Task.exists?(@resource_id).callback { |res|
 			if res
 				task = Task.new(@resource_id)
-				task.aget_description.callback { |desc|
+				task.aget_current_location.callback { |desc|
 					@socket.send desc
 				}	
 			end
 		}
-		
 	end
 
 end

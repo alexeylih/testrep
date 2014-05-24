@@ -1,4 +1,4 @@
-require './router'
+require './spec_helper'
 
 describe Router, "self.dispatch" do 
 	it "returns nil for invalid path (non /1 format path) " do 

@@ -3,18 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>Tasks</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
     <script src="js/task_api_consumer.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">
+    </script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+
   </head>
   <body>
-    <div ng-controller="TaskCtrl">
-    
-      <p>Task description: {{task.description}}</p>
-      <button>Load</button>
+    <div ng-controller="TaskCtrl" class="panel callout radius">
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <div class="row"><p>All tasks</p></div>
+      
 
+      <div ng-repeat="task in tasks">
+          <div class="row">
+            <span>{{task.description}}</span>
+
+            <a ng-click="retrieveTask(task.id)">
+                Show
+            </a>
+
+            </div>
+      </div>
+
+  <div id="get_task_modal" class="reveal-modal" data-reveal>
+        <div id="map" style="width: 600px; height: 400px"></div>
+        <p>Description: {{current_task.description}}</p>
+        <p>Target location: {{current_task.target_location}}</p>
+        <p>Current location: {{current_task.current_location}}</p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+    
     </div>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
