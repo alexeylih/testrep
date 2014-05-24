@@ -14,8 +14,6 @@ require 'lib/connection_handlers'
 
 EventMachine.run do
 
-	p ENV
-
 	def redis
 		$redis ||= EM::Hiredis.connect
 	end
