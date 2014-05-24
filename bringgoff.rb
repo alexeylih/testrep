@@ -15,7 +15,7 @@ require 'lib/connection_handlers'
 EventMachine.run do
 
 	def redis
-		$redis ||= EM::Hiredis.connect
+		$redis ||= EM::Hiredis.connect("redis://redistogo:c5c119ec95f29c20886bcf5a7f7a6f2f@angelfish.redistogo.com:10023/")
 	end
 
 	EventMachine::WebSocket.run(host: "0.0.0.0", port: 8080) do |socket|
@@ -44,6 +44,6 @@ EventMachine.run do
 
   EventMachine.error_handler { |err| puts err }
 
-  AsyncRestServer.run!({:port => 3000}) 
+  AsyncRestServer.run!
 
 end
