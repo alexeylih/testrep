@@ -17,8 +17,8 @@ EventMachine.run do
 		$redis ||= EM::Hiredis.connect("redis://redistogo:c5c119ec95f29c20886bcf5a7f7a6f2f@angelfish.redistogo.com:10023/")
 	end
 
-	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
-		
+	EventMachine::WebSocket.run(host: "0.0.0.0", port: 8080) do |socket|
+
     socket.onopen do |handshake|
 
 	  item_id = HandshakeHelper.dispatch handshake.path

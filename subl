@@ -1,0 +1,206 @@
+2014-05-25T23:01:27.899990+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=cd229d84-86fc-4b4a-b7e9-8a63f6fa0ade fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:01:54.018285+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=577123b6-cf25-4148-948d-fa325ba9ff9f fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:01:54.835768+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=22721904-2ab1-4efa-986c-154c2e443f5c fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:03:49+00:00 heroku[slug-compiler]: Slug compilation started
+2014-05-25T23:04:00+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-05-25T23:04:00.172626+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:04:00.045240+00:00 heroku[api]: Deploy 15d01f7 by alexeymn@gmail.com
+2014-05-25T23:04:00.045331+00:00 heroku[api]: Release v12 created by alexeymn@gmail.com
+2014-05-25T23:04:05.143348+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:04:05.143403+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:04:05.143423+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:04:05.143758+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:04:06.648013+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:04:03.373343+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 11033`
+2014-05-25T23:04:06.583223+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:05:35.001887+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=851290f4-1cfa-46d2-89ee-9d841405cc5e fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:35.782181+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=50be7828-04bc-4ada-aa45-c8b53429dfd3 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:37.503048+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=3b37ddeb-105c-4666-aeed-c28fb11c8124 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:38.328295+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=5e4b954d-06ed-436d-8a83-88e920791e3d fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:39.524425+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=c40b138f-edd7-4d35-932c-4ef26819ded8 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:40.361200+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=e2f8334b-6ec8-4a78-9255-2cb0b5872575 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:41.479033+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=46a26ad8-533e-4d09-a49e-1be24651baea fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:42.251415+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=48cfa3bd-6411-4d60-8157-a936fee4e133 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:47.102499+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=5cbcdc5c-186b-4a0f-8cd7-d19ce5286ab4 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:47.886178+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=ad5c8a26-495a-4689-8aec-a739570a842e fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:38.897397+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=4b0e20b9-c8e6-4e2e-a6c2-3a915c227313 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:39.965701+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=b93445f2-cb34-457b-bc41-adb1d8b5809d fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:45.225957+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/client host=protected-headland-4566.herokuapp.com request_id=0c6ee965-197e-49bc-8043-9660ec587f88 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:45.968807+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=dfe0521a-7e99-49bc-ab23-84f10e37469d fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:08:20.277498+00:00 heroku[api]: Rollback to v11 by alexeymn@gmail.com
+2014-05-25T23:08:20.277498+00:00 heroku[api]: Release v13 created by alexeymn@gmail.com
+2014-05-25T23:08:21.276609+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:08:25.866949+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/bundler/gems/em-websocket-8d899d1def2c/lib/em-websocket/websocket.rb:46:in `run'
+2014-05-25T23:08:25.866969+00:00 app[web.1]: 	from bringgoff.rb:20:in `block in <main>'
+2014-05-25T23:08:25.867029+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `run'
+2014-05-25T23:08:25.867047+00:00 app[web.1]: 	from bringgoff.rb:14:in `<main>'
+2014-05-25T23:08:25.866885+00:00 app[web.1]: /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:526:in `start_tcp_server': no acceptor (port is in use or requires root privileges) (RuntimeError)
+2014-05-25T23:08:25.866927+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:526:in `start_server'
+2014-05-25T23:08:25.866989+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `call'
+2014-05-25T23:08:25.867009+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `run_machine'
+2014-05-25T23:08:27.124264+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:08:23.916991+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 32572`
+2014-05-25T23:08:27.097177+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:08:39.769564+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:08:39.643744+00:00 heroku[api]: Release v14 created by alexeymn@gmail.com
+2014-05-25T23:08:39.643664+00:00 heroku[api]: Rollback to v12 by alexeymn@gmail.com
+2014-05-25T23:08:42.029531+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 35288`
+2014-05-25T23:08:43.425680+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:08:43.425698+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:08:43.425700+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:08:43.425795+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:08:44.642935+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:08:44.644277+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:09:01.271354+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=c8cd4426-20b9-4891-8398-99d35414d858 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:02.159756+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=15ed9d99-84a9-463d-80f4-52f88cd39349 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:03.246486+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=d5f106f7-d1d9-49de-a1a8-60e86b860d6a fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:04.041636+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=49b10ff3-5178-4b76-8eab-9ce53c00c879 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:10.581710+00:00 heroku[api]: Rollback to v14 by alexeymn@gmail.com
+2014-05-25T23:09:10.581710+00:00 heroku[api]: Release v15 created by alexeymn@gmail.com
+2014-05-25T23:09:10.780711+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:09:14.966442+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:09:14.966487+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:09:14.966508+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:09:14.966654+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:09:16.163511+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:09:13.635281+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 57338`
+2014-05-25T23:09:16.146290+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:09:23.243209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=1ac12380-4198-4eef-8830-b3f6f3e9384e fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:24.019467+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=6ae886d4-77f2-4fb3-aadc-03c83bb3df84 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:41.325916+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:09:45.073943+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:09:45.073963+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:09:45.073966+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:09:45.074061+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:09:43.788505+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 15735`
+2014-05-25T23:09:46.280003+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:09:46.297505+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:10:28.541821+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=34128559-1310-4c92-85ac-b2323774b6a4 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:10:29.473960+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=69b7af6e-5f1e-481d-9d29-8b380c2618c0 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:10:30.306061+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=5cf6fa8e-e3ff-4613-b522-d130e8a6f28b fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:10:31.105865+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=ef5f35a1-f390-45d6-be18-330870eb4b09 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:12:37+00:00 heroku[slug-compiler]: Slug compilation started
+2014-05-25T23:12:46+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-05-25T23:12:47.074099+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:12:46.885404+00:00 heroku[api]: Deploy 1c9ba93 by alexeymn@gmail.com
+2014-05-25T23:12:46.885491+00:00 heroku[api]: Release v16 created by alexeymn@gmail.com
+2014-05-25T23:12:51.331676+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:12:51.331924+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:12:51.331737+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:12:51.331760+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:12:52.545587+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:12:53.691357+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=27466adb-b45d-4e9e-82c3-3353089bb705 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:12:54.466574+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=2b3353d5-d8bf-4765-a032-2bed4d6c48d6 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:12:49.798740+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 5888`
+2014-05-25T23:12:52.540267+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:12:55.545711+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=9a0a502f-356c-471a-b104-86111944da90 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:12:56.352047+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=85b3c6bb-5d7e-4845-abfa-0f57f6c5cfc4 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:01.794776+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=fc64f785-c4e3-4e59-9aa8-f91c4a3006ad fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:02.604054+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=bb8ff667-b961-4dc2-ae0a-f661bae3131f fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:50.546852+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=dbb2f1d2-1d93-4ff7-877f-8971ad9d7825 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:51.469746+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=36954b76-e56b-4695-b089-1a54f99df113 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:01:54.835768+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=22721904-2ab1-4efa-986c-154c2e443f5c fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:03:49+00:00 heroku[slug-compiler]: Slug compilation started
+2014-05-25T23:04:00+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-05-25T23:04:00.172626+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:04:00.045240+00:00 heroku[api]: Deploy 15d01f7 by alexeymn@gmail.com
+2014-05-25T23:04:00.045331+00:00 heroku[api]: Release v12 created by alexeymn@gmail.com
+2014-05-25T23:04:05.143348+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:04:05.143403+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:04:05.143423+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:04:05.143758+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:04:06.648013+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:04:03.373343+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 11033`
+2014-05-25T23:04:06.583223+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:05:35.001887+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=851290f4-1cfa-46d2-89ee-9d841405cc5e fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:35.782181+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=50be7828-04bc-4ada-aa45-c8b53429dfd3 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:37.503048+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=3b37ddeb-105c-4666-aeed-c28fb11c8124 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:38.328295+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=5e4b954d-06ed-436d-8a83-88e920791e3d fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:39.524425+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=c40b138f-edd7-4d35-932c-4ef26819ded8 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:40.361200+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=e2f8334b-6ec8-4a78-9255-2cb0b5872575 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:41.479033+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=46a26ad8-533e-4d09-a49e-1be24651baea fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2
+014-05-25T23:05:42.251415+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=48cfa3bd-6411-4d60-8157-a936fee4e133 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:47.102499+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=5cbcdc5c-186b-4a0f-8cd7-d19ce5286ab4 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:05:47.886178+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=ad5c8a26-495a-4689-8aec-a739570a842e fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:38.897397+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=4b0e20b9-c8e6-4e2e-a6c2-3a915c227313 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:39.965701+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=b93445f2-cb34-457b-bc41-adb1d8b5809d fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:45.225957+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/client host=protected-headland-4566.herokuapp.com request_id=0c6ee965-197e-49bc-8043-9660ec587f88 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:06:45.968807+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=dfe0521a-7e99-49bc-ab23-84f10e37469d fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:08:20.277498+00:00 heroku[api]: Rollback to v11 by alexeymn@gmail.com
+2014-05-25T23:08:20.277498+00:00 heroku[api]: Release v13 created by alexeymn@gmail.com
+2014-05-25T23:08:21.276609+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:08:25.866949+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/bundler/gems/em-websocket-8d899d1def2c/lib/em-websocket/websocket.rb:46:in `run'
+2014-05-25T23:08:25.866969+00:00 app[web.1]: 	from bringgoff.rb:20:in `block in <main>'
+2014-05-25T23:08:25.867029+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `run'
+2014-05-25T23:08:25.867047+00:00 app[web.1]: 	from bringgoff.rb:14:in `<main>'
+2014-05-25T23:08:25.866885+00:00 app[web.1]: /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:526:in `start_tcp_server': no acceptor (port is in use or requires root privileges) (RuntimeError)
+2014-05-25T23:08:25.866927+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:526:in `start_server'
+2014-05-25T23:08:25.866989+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `call'
+2014-05-25T23:08:25.867009+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.0.0/gems/eventmachine-1.0.3/lib/eventmachine.rb:187:in `run_machine'
+2014-05-25T23:08:27.124264+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:08:23.916991+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 32572`
+2014-05-25T23:08:27.097177+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:08:39.769564+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:08:39.643744+00:00 heroku[api]: Release v14 created by alexeymn@gmail.com
+2014-05-25T23:08:39.643664+00:00 heroku[api]: Rollback to v12 by alexeymn@gmail.com
+2014-05-25T23:08:42.029531+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 35288`
+2014-05-25T23:08:43.425680+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:08:43.425698+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:08:43.425700+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:08:43.425795+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T2
+3:08:44.642935+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:08:44.644277+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:09:01.271354+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=c8cd4426-20b9-4891-8398-99d35414d858 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:02.159756+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=15ed9d99-84a9-463d-80f4-52f88cd39349 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:03.246486+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=d5f106f7-d1d9-49de-a1a8-60e86b860d6a fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:04.041636+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=49b10ff3-5178-4b76-8eab-9ce53c00c879 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:10.581710+00:00 heroku[api]: Rollback to v14 by alexeymn@gmail.com
+2014-05-25T23:09:10.581710+00:00 heroku[api]: Release v15 created by alexeymn@gmail.com
+2014-05-25T23:09:10.780711+00:00 heroku[web.1]: State changed from crashed
+ to starting
+2014-05-25T23:09:14.966442+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:09:14.966487+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:09:14.966508+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:09:14.966654+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:09:16.163511+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:09:13.635281+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 57338`
+2014-05-25T23:09:16.146290+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:09:23.243209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=1ac12380-4198-4eef-8830-b3f6f3e9384e fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:24.019467+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=6ae886d4-77f2-4fb3-aadc-03c83bb3df84 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:09:41.325916+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:09:45.073943+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:09:45.073963+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:09:45.073966+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:09:45.074061+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:09:43.788505+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 15735`
+2014-05-25T23:09:46.280003+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:09:46.297505+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:10:28.541821+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=34128559-1310-4c92-85ac-b2323774b6a4 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:10:29.473960+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=69b7af6e-5f1e-481d-9d29-8b380c2618c0 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:10:30.306061+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=5cf6fa8e-e3ff-4613-b522-d130e8a6f28b fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:10:31.105865+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=ef5f35a1-f390-45d6-be18-330870eb4b09 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:12:37+00:00 heroku[slug-compiler]: Slug compilation started
+2014-05-25T23:12:46+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-05-25T23:12:47.074099+00:00 heroku[web.1]: State changed from crashed to starting
+2014-05-25T23:12:46.885404+00:00 heroku[api]: Deploy 1c9ba93 by alexeymn@gmail.com
+2014-05-25T23:12:46.885491+00:00 heroku[api]: Release v16 created by alexeymn@gmail.com
+2014-05-25T23:12:51.331676+00:00 app[web.1]: bringgoff.rb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+2014-05-25T23:12:51.331924+00:00 app[web.1]: bringgoff.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
+2014-05-25T23:12:51.331737+00:00 app[web.1]: 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
+2014-05-25T23:12:51.331760+00:00 app[web.1]: 	                                                ^
+2014-05-25T23:12:52.545587+00:00 heroku[web.1]: State changed from starting to crashed
+2014-05-25T23:12:53.691357+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=27466adb-b45d-4e9e-82c3-3353089bb705 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T
+23:12:54.466574+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=2b3353d5-d8bf-4765-a032-2bed4d6c48d6 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:12:49.798740+00:00 heroku[web.1]: Starting process with command `bundle exec ruby bringgoff.rb -p 5888`
+2014-05-25T23:12:52.540267+00:00 heroku[web.1]: Process exited with status 1
+2014-05-25T23:12:55.545711+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=9a0a502f-356c-471a-b104-86111944da90 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:12:56.352047+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=85b3c6bb-5d7e-4845-abfa-0f57f6c5cfc4 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:01.794776+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=fc64f785-c4e3-4e59-9aa8-f91c4a3006ad fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:02.604054+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=bb8ff667-b961-4dc2-ae0a-f661bae3131f fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:50.546852+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=dbb2f1d2-1d93-4ff7-877f-8971ad9d7825 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:13:51.469746+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=36954b76-e56b-4695-b089-1a54f99df113 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:14:45.878547+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/ host=protected-headland-4566.herokuapp.com request_id=6cae0d31-3914-4550-934e-5b4d327dab94 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
+2014-05-25T23:14:46.872095+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path=/favicon.ico host=protected-headland-4566.herokuapp.com request_id=4cd595c5-957b-40aa-afbb-af08eb7bcc24 fwd="46.120.81.245" dyno= connect= service= status=503 bytes=
