@@ -18,7 +18,7 @@ EventMachine.run do
 	end
 
 	EventMachine::WebSocket.run(host: "0.0.0.0" port: 8080) do |socket|
-
+		
     socket.onopen do |handshake|
 
 	  item_id = HandshakeHelper.dispatch handshake.path
