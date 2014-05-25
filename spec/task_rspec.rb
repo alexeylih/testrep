@@ -4,16 +4,16 @@ describe Task do
 
 	#Task functional tests
 
-	# it "creates task from parameters and stores it" do
-	# 	EventMachine.run {
-	# 		sig = EventMachine.start_server("0.0.0.0", "3001")
-	# 		Task.create("Bring pizza to Sam", "32,32", "42,42").callback {
-	# 			expect_task_to(1, ["1", "Bring pizza to Sam", "32,32", "42,42"])
-	# 			p "stopping"
-	# 			EventMachine.stop_server sig
-	# 		}
-	# 	}
- 	#   end
+	it "creates task from parameters and stores it" do
+		EventMachine.run {
+			sig = EventMachine.start_server("0.0.0.0", "3001")
+			Task.create("Bring pizza to Sam", "32,32", "42,42").callback {
+				expect_task_to(1, ["1", "Bring pizza to Sam", "32,32", "42,42"])
+				p "stopping"
+				EventMachine.stop_server sig
+			}
+		}
+ 	  end
 
 	  it "deletes task" do
 			EventMachine.run {

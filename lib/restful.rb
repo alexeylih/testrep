@@ -19,12 +19,13 @@ class AsyncRestServer < Sinatra::Base
 				body task.to_json
 			}
 		else
-			
+			not_found
 		end
 	}	
   end
 
   apost '/api/tasks/:n' do |n|
+  	p params[:data]
 	if !params[:data]
 		bad_request
 	end 

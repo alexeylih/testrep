@@ -1,61 +1,42 @@
-	<html>
+	<html ng-app>
 	<head>
-	<title>Test</title>
 	<meta charset="utf-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
 </head>
-<body onload="main()">
-	<div id="map" style="width: 600px; height: 400px"></div>
+<body>
+	<div class="row">
+		<div id="map" style="width: 600px; height: 400px"></div> 
+	</div>
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 
 	<script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 
-	<button onclick="ogo()">Track location</button>
-	<edit></edit>
+	<script src="js/map.js"></script>
 
-	
-	<script>
-	function main()
-	{
+	<script src="js/map_controller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 
-		map = L.map('map');
+	<p></p>
 
-		function updateLocation(){
-			if (navigator.geolocation){
+	<div class="row">
 
-	   		 navigator.geolocation.getCurrentPosition(function(position){
-	   		 		console.log(JSON.stringify(position.coords));
-	   		 		var pos = [position.coords.latitude, position.coords.longitude];
-	   		 		map.setView(pos, 13);
-	   		 		L.marker(pos).addTo(map);
-	   		 });
-		    }
-		}
+    <div ng-controller="MapCtrl">
+			<a ng-click="switchToSender()" href="#">Act as sender</a>
+			<a ng-click="switchToReciever()"href="#">Act as reciever</a>
 
-		var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
-		var ws = new Socket("http://protected-headland-4566.herokuapp.com/api/tasks/1", "ws_reciever");	
-		
-        ws.onmessage = function(evt) { console.log("Received: " + evt.data); };
+			<div class="row"><p>Task id: </p><input type="text" ng-model="task_id"/></div>
+    </div>
 
-		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			id: 'examples.map-i86knfo3'
-		}).addTo(map);
+	</div>
 
-		if (navigator.geolocation){
-			window.setInterval(updateLocation, 3000);
-		}
-	}
+    
 
-
-	
-	</script>
 </body>
 </html>

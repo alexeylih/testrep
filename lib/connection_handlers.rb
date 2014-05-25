@@ -10,7 +10,6 @@ class ConnectionHandler
 
 	def onclose
 	end
-	
 end
 
 class PublisherHandler < ConnectionHandler
@@ -25,7 +24,7 @@ class PublisherHandler < ConnectionHandler
 		Task.exists?(@resource_id).callback { |res|
 			if res
 				task = Task.new(@resource_id)
-				task.aset_current_location { |desc|
+				task.aset_current_location(val) { |desc|
 					@socket.send "updated"
 				}	
 			end

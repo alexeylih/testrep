@@ -1,15 +1,6 @@
 function TaskCtrl($scope, $http) {
 
 	// map init 
-	var map = L.map('map').setView([51.505, -0.09], 13);
-
-		L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			id: 'examples.map-i86knfo3'
-		}).addTo(map);
 
     $http.get('api/tasks/').
         success(function(data) {
@@ -18,51 +9,65 @@ function TaskCtrl($scope, $http) {
 
 
     $scope.retrieveTask = function(taskId) {
-    	    $http.get('api/tasks/' + taskId).
-        	success(function(data) {
 
-        		$scope.current_task = data;
-            	var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
-				var ws = new Socket("ws://localhost:8080/" + taskId, "ws_reciever");	
+	    $http.get('api/tasks/' + taskId).
+		success(function(data) {
+			$scope.current_task = data;
 
-        		ws.onmessage = function(evt) { 
-	            	if (data.current_location != null){
-	            		position = data.current_location.split(',')
-	            		console.log(position);
-	            		// if ((position[0] === 'number' )
-	            		// 	&& (position[1] === 'number')
-	            		// 	 && (position.length == 2)){
-	            			map.setView(position, 13);		
-	            		//}
-	            	}
-            	}
+			$('#get_task_modal').bind("close", function() { 
+			})
 
-        		$('#get_task_modal').bind("close", function() { 
-        			console.log(ws);
-        			ws.close();
-        			console.log("close"); })
-
-
-        		$('#get_task_modal').foundation('reveal', 'open');
-
-            	$scope.current_task = data;
-        });
+			$('#get_task_modal').foundation('reveal', 'open');
+	    	$scope.current_task = data;
+	});
      }
 
     $scope.updateTask = function(taskId) {
-        	$('#post_task_modal').foundation('reveal', 'open');
+        		$scope.current_task_id = taskId;
+        		$('#putpost_task_modal').foundation('reveal', 'open');
+				clearTaskToSend();	        	
+				$('#putpost_task_modal').bind("close", function() { 
+        				$scope.current_task_id = -1;
+        			});
     }
 
+    $scope.newTask = function() {
+        		$('#put_task_modal').foundation('reveal', 'open');
+				clearTaskToSend();	        	
+    }
 
+    $scope.submitTask = function() {
+         $http({
+         method: 'POST',
+         url: "api/tasks/" + $scope.current_task_id,
+         data: $.param({ data: { "description": $scope.task_desc,
+         	"current_location": $scope.task_current,
+         	"destination_location": $scope.task_target
+         }}),
 
-    // $scope.submit = function() {
-    //     $http({
-    //     method: 'POST',
-    //     url: "feeds/",
-    //     data: $.param({title: "jecky", url: this.urlToAdd}),
-    //     headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
-    //     .then(function(){}, function(){
-    //         alert("fail");
-    //     })
-    // };
+         headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+         .then(function(){}, function(){
+         })
+     }
+
+     $scope.submitNewTask = function() {
+         $http({
+         method: 'PUT',
+         url: "api/tasks/",
+         data: $.param({ data: { "description": $scope.task_desc,
+         	"current_location": $scope.task_current,
+         	"destination_location": $scope.task_target
+         }}),
+
+         headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+         .then(function(){}, function(){
+         });
+         $('#put_task_modal').foundation('reveal', 'close');
+     }
+
+    function clearTaskToSend(){
+		$scope.task_desc = "";
+    	$scope.task_target = "";
+    	$scope.task_current = ""; 
+    }
 }

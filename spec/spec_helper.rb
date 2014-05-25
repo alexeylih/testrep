@@ -1,7 +1,7 @@
 $:.unshift File.expand_path(File.dirname(__FILE__) + "/../lib")
 
 require 'em-hiredis'
-require 'router'
+require 'handshake_handler'
 require 'model'
 require './connection_helper'
 

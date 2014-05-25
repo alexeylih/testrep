@@ -5,12 +5,14 @@ require 'lib/status_helper'
 class AsyncRestServer < Sinatra::Base
   register Sinatra::Async
   include StatusHelper
-  
-	aget '/api/tasks/' do 
+
+  enable :show_exceptions
+
+  aget '/api/tasks/' do 
   		Task.all.callback { |all_tasks|
-  			body all_tasks.result.to_json
-		}
-	end
+			body all_tasks.result.to_json
+	}
+  end
 
 
   aget '/api/tasks/:n' do |n|
@@ -26,23 +28,25 @@ class AsyncRestServer < Sinatra::Base
 	}	
   end
 
-  apost '/api/tasks/' do 
+  apost '/api/tasks/:n' do |n|
 	if !params[:data]
 		bad_request
 	end 
 
 	Task.exists?(n).callback { |found|
 		if found.result
-			Task.new(n)
-				.update_from_json(params[:data])
-				.callback{ |res| body res.to_json }
+			Task.new(n).update_from_json(params[:data])
+				.callback{ |res| 
+					p "success" + res.to_s
+					p "success" + res.to_json
+					body res.to_json }
 		else
 			not_found
 		end
 	}
   end
 
-  aput '/api/tasks/:n' do |n|
+  aput '/api/tasks/' do 
 	if params[:data]
 		Task.create_from_json(params[:data]).callback { |res| body res.to_json }
 	else
@@ -52,9 +56,17 @@ class AsyncRestServer < Sinatra::Base
 
   aget '/' do
   	begin
-  		p settings.public_folder
 	  	# somhow must change this to non-blocking fs read
 	  	body File.read('public/index.html')
+  	rescue Exception => e   
+  		p e
+  	end 
+  end
+
+  aget '/client' do
+  	begin
+	  	# somhow must change this to non-blocking fs read
+	  	body File.read('public/client.html')
   	rescue Exception => e   
   		p e
   	end 

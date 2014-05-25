@@ -9,14 +9,13 @@
     <script src="js/task_api_consumer.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">
     </script>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    
 
   </head>
   <body>
+  
     <div ng-controller="TaskCtrl" class="panel callout radius">
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <div class="row"><p>All tasks</p></div>
-      
+    <div class="row"><h3>All tasks</h3></div>
 
       <div ng-repeat="task in tasks">
           <div class="row">
@@ -26,16 +25,45 @@
                 Show
             </a>
 
+            <a ng-click="updateTask(task.id)">
+                Update
+            </a>
+
             </div>
       </div>
 
+  <div class="row">
+      <p></p>
+      <button ng-click="newTask()">New</button>
+    </div>
+
+    <a href="/client">Tracking</a>
+
   <div id="get_task_modal" class="reveal-modal" data-reveal>
-        <div id="map" style="width: 600px; height: 400px"></div>
         <p>Description: {{current_task.description}}</p>
-        <p>Target location: {{current_task.target_location}}</p>
+        <p>Target location: {{current_task.destination_location}}</p>
         <p>Current location: {{current_task.current_location}}</p>
     <a class="close-reveal-modal">&#215;</a>
   </div>
+
+  <div id="putpost_task_modal" class="reveal-modal" data-reveal>
+        <p>Description: </p><input type="text" ng-model="task_desc"/>
+        <p>Target location: </p><input type="text" ng-model="task_target"/>
+        <p>Current location: </p><input type="text" ng-model="task_current"/>
+        <button ng-click="submitTask()">Update</button>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <div id="put_task_modal" class="reveal-modal" data-reveal>
+        <h4>New task<h4>
+        <p>Description: </p><input type="text" ng-model="task_desc"/>
+        <p>Target location: </p><input type="text" ng-model="task_target"/>
+        <p>Current location: </p><input type="text" ng-model="task_current"/>
+        <button ng-click="submitNewTask()">New</button>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+
 
     
     </div>

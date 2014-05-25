@@ -52,7 +52,7 @@ class Record
   	@@properties.each { |prop|
   		redis.del("#{@@klass}:id:" + id.to_s + ":#{prop}")
   	}
-  	
+
   	redis.exec
   end 
 
@@ -112,11 +112,11 @@ class Task < Record
 		}
 	end
 
-	def update_async(params = {}) 
+	def update_async(params = {})
 		redis.multi
-	    	aset_description(params[:description]) if params.key? :description
-		    aset_destination_location(params[:destination_location]) if params.key? :destination_location
-		    aset_current_location(params[:current_location]) if params.key? :current_location
+	    	aset_description(params[:description]) if params[:description]
+		    aset_destination_location(params[:destination_location]) if params[:destination_location]
+		    aset_current_location(params[:current_location]) if params[:current_location]
     	redis.exec.callback {
     		succeed(self)	
     	}		
@@ -124,7 +124,6 @@ class Task < Record
 	end 
 
 	def self.exists?(id)
-		puts caller
 		found = DeferrableResult.new
 		# if mandatory destination_location filed exists, the whole object exists
 		redis.exists("task:id:#{id}:destination_location")
@@ -147,7 +146,7 @@ class Task < Record
 	end
 
 	def self.create_from_json(json_data)
-		data = JSON.parse(json_data, :symbolize_names => true)
+		data = Task.from_json json_data
 		Task.create(data[:description], 
 			data[:destination_location],
 			data[:current_location])
@@ -161,7 +160,7 @@ class Task < Record
 	private 
 
 	def self.from_json(json_data)
-		JSON.parse(json_data, :symbolize_names => true)
+		json_data.is_a?(Hash) ? json_data : JSON.parse(json_data, :symbolize_names => true)
 	end
 
 end
